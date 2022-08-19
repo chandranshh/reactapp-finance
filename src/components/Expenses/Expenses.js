@@ -2,6 +2,8 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
 
+//Add the following to the Expenses.js file:
+
 const Expenses = ({ items }) => {
   return (
     <Card className="expenses">
