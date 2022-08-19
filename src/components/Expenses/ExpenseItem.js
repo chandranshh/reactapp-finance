@@ -5,6 +5,7 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 //Date is passed in form of props from App.js
+//Add the following to the ExpenseItem.js file:
 const ExpenseItem = ({ date, title, amount }) => {
 
   const [newTitle, setnewTitle] = useState(title);
