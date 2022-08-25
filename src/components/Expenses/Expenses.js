@@ -17,6 +17,19 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
+  let expenseContent = <p>No item(s) added to the list yet.</p>;
+
+  if (filteredExpenses.length > 0) {
+    expenseContent = filteredExpenses.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
+
   return (
     <Card className="expenses">
       <ExpensesFilter
@@ -38,10 +51,10 @@ const Expenses = (props) => {
         ))
       )} */}
 
-      {filteredExpenses.length === 0 && (
+      {/* {filteredExpenses.length === 0 && (
         <p>No item(s) added to the list yet.</p>
       )}
-      {filteredExpenses.length > 0 &&
+      {filteredExpenses.length > 0 && 
         filteredExpenses.map((expense) => (
           <ExpenseItem
             key={expense.id}
@@ -49,7 +62,9 @@ const Expenses = (props) => {
             amount={expense.amount}
             date={expense.date}
           />
-        ))}
+        ))} */}
+
+      {expenseContent}
     </Card>
   );
 };
